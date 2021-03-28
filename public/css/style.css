@@ -7,21 +7,22 @@ body {
     background-color:rgba(255,255,255,0.1);
     background-blend-mode:lighten;
     font-family: 'Times New Roman' ;
-
+    color: white;
 }
 
 header {
     opacity: 0.4;
 }
 
-h1 {
-    color: white;
-}
-
-h1.welcome {
-    font-size: 6vw;
+.headcontent {
+    font-size: 7vw;
 }
 
 header {
-    font-size: 2vw;
+    font-size: 1.5vw;
+}
+
+p {
+    font-size: 1.5vw;
+    margin: auto;
 }
