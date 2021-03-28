@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center">Welcome to MuscleShare</h1>
+
+<div class="text-center">
+    <h1 class="welcome">Welcome to MuscleShare</h1>
+    <!--ユーザー登録ページのリンク-->
+    {!! link_to_route('signup.get', 'ユーザー登録（無料）', [], ['class' => 'btn btn-lg btn-secondary']) !!}
+</div>
+
 @endsection
