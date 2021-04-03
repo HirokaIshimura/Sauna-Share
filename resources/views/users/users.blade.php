@@ -2,15 +2,15 @@
     <ul class="list-unstyled">
         @foreach ($users as $user)
             <li class="media">
-                {{-- ユーザのメールアドレスをもとにGravatarを取得して表示 --}}
-                <img class="mr-2 rounded" src="{{ Gravatar::get($user->email, ['size' => 50]) }}" alt="">
+                {{-- ユーザのプロファイル画像を表示 --}}
+                <img class="mr-2 rounded" src="{{ asset('storage/profiles/'.$user->profile_image) }}" alt="プロフィール画像">
                 <div class="media-body">
-                    <div>
+                    <div class="text-white h4">
                         {{ $user->name }}
                     </div>
                     <div>
                         {{-- ユーザ詳細ページへのリンク --}}
-                        <p>{!! link_to_route('users.show', 'View profile', ['user' => $user->id]) !!}</p>
+                        <p class="h5">{!! link_to_route('users.show', 'プロフィール', ['user' => $user->id]) !!}</p>
                     </div>
                 </div>
             </li>

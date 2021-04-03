@@ -26,3 +26,12 @@ p {
     font-size: 1.5vw;
     margin: auto;
 }
+
+input #profile_image {
+    display: none;
+}
+
+h3 {
+    font-size: 3vw;
+    font-weight: bolder;
+}

@@ -13,14 +13,20 @@
                 @if(Auth::check())
                     <!--Max計算ページへのリンク-->
                     <li class="navi-item"><a class="nav-link" href="#">Max計算</a></li>
-                    {{-- お気に入り一覧ページへのリンク --}}
-                    <li class="nav-item"><a href="#" class="nav-link">お気に入り</a></li>
+                    {{-- ユーザー一覧ページへのリンク --}}
+                    <li class="nav-item">{!! link_to_route('users.index', 'ユーザー', [], ['class' => 'nav-link']) !!}</li>
+                    
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MyPage</a>
                         <ul class="dropdown-menu dropdown-menu-right">
+                            
                             {{-- ユーザ詳細ページへのリンク --}}
-                            <li class="dropdown-item"><a href="#">プロフィール</a></li>
+                            <li class="dropdown-item">{!! link_to_route('users.show', 'プロフィール', ['user' => Auth::id()]) !!}</li>
+                            {{-- お気に入り一覧ページへのリンク --}}
+                            <li class="nav-item"><a href="#" class="nav-link">お気に入り</a></li>
+                            
                             <li class="dropdown-divider"></li>
+                            
                             {{-- ログアウトへのリンク --}}
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
                         </ul>

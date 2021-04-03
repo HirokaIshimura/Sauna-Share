@@ -3,16 +3,24 @@
 @section('content')
     <div class="row">
         <aside class="col-sm-4">
-            <div class="card">
-                <div class="card-body">
-                    {{-- ユーザのメールアドレスをもとにGravatarを取得して表示 --}}
-                    <img class="rounded img-fluid" src="{{ Gravatar::get($user->email, ['size' => 500]) }}" alt="">
-                </div>
-                <div class="card-footer">
-                    <h3 class="card-title">{{ $user->name }}</h3>
-                </div>
-
+            {{-- ユーザのプロファイル画像を表示--}}
+            <img class="rounded img-fluid img-thumbnail my-4" src="{{ asset('storage/profiles/'.$user->profile_image) }}" style="width:80%; height:auto" alt="プロフィール画像">
+            
+            <div class="mb-5">
+                <h3>{{ $user->name }}</h3>
             </div>
+            @if (Auth::id() == $user->id)
+                <div class="my-2">
+                    {{-- メッセージ編集ページへのリンク --}}
+                     {!! link_to_route('users.edit', 'プロフィールを編集', ['user' => $user->id], ['class' => 'btn btn-secondary']) !!}
+                </div>
+                <div class="my-2">
+                    {{-- メッセージ編集ページへのリンク --}}
+                    {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+                        {!! Form::submit('アカウントを削除', ['class' => 'btn btn-secondary']) !!}
+                    {!! Form::close() !!}
+                </div>
+            @endif
         </aside>
         <div class="col-sm-8">
             <ul class="nav nav-tabs nav-justified mb-3">
