@@ -2,7 +2,11 @@
 
 @section('content')
     @if(Auth::check())
-        {{ Auth::user()->name }}
+        <div class="row m-auto">
+            <div class="col-sm-8 offset-sm-2">
+                @include('posts.index')
+            </div>
+        </div>
     @else
         <div class="text-center my-auto">
             <h1 class="headcontent p-4">Welcome to MuscleShare</h1>

@@ -147,5 +147,7 @@ return [
     */
 
     'attributes' => [],
+    
+    'max_mb' => 'The :attribute may not be greater than :max_mb megabytes.',
 
 ];

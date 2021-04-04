@@ -8,7 +8,7 @@
         <div class="col-sm-6 offset-sm-2">
             {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'put', 'enctype' => 'multipart/form-data']) !!}
             @csrf
-                <p class="text-white">プロフィール画像：</p>
+                <p class="text-white h6">プロフィール画像：</p>
                 <div class="form-group btn pb-4">
                     <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
                     <input id="profile_image" type="file"  name="profile_image" onchange="previewImage(this);">

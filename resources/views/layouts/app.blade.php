@@ -18,6 +18,10 @@
             @include('commons.error_messages')
 
             @yield('content')
+            
+            @if(Auth::check())
+                <a href="/posts/create" id="create_post"><i class="fas fa-edit fa-6x"></i></a>
+            @endif
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
