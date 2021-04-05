@@ -47,18 +47,21 @@ class PostsController extends Controller
     
     public function store(PostRequest $request)
     {
+        $form = $request->all();
         $file = $request->file('picture_url');
-        $path = $file->getClientOriginalName();
-        //アスペクト比を維持、画像サイズを横幅1080pxにして保存する。
-        InterventionImage::make($file)->resize(550, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/post_pictures/' . $path));
-
-        // 認証済みユーザ（閲覧者）の投稿として作成
-        $request->user()->posts()->create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'picture_url' => $path,
-        ]);
         
+        if ($file != null){
+            $path = $file->getClientOriginalName();
+            //アスペクト比を維持、画像サイズを横幅1080pxにして保存する。
+            InterventionImage::make($file)->resize(550, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/post_pictures/' . $path));
+            $form['picture_url'] = $path;
+        }
+        
+        unset($form['_token']);
+        unset($form['_method']);
+        
+        $request->user()->posts()->create($form);
+
         return redirect('/');
         
     }

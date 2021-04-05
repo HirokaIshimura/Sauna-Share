@@ -39,9 +39,14 @@ h3 {
     width: 10%;
     border-radius: 50%;
     text-decoration: none;
-    color: white;
+    color: blue;
 }
 
 .user-image {
     border-radius: 50%;
+}
+
+.post-picture img{
+    width: 100%;
+    height: auto;
 }

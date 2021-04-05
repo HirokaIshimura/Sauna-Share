@@ -2,8 +2,8 @@
     <ul class="list-unstyled">
         @foreach ($posts as $post)
             <li class="media mb-3">
-                <div class="media-body">
-                    <div class="card">
+                <div class="media-body" style="display:flex;">
+                    <div class="card" style="flex-grow:1; width:100%; height:auto;">
                         
                         <div class="card-header bg-dark">
                             <img class="mr-2 rounded" style="width:50px; height:50px" src="{{ asset('storage/profiles/'.$user->profile_image) }}" alt="プロフィール画像">
@@ -22,9 +22,11 @@
                                 <p class="mb-2 text-dark">{!! nl2br(e($post->content)) !!}</p>
                             </div>
                             
-                            <div class="post-picture">
-                                <img src ="{{ asset('storage/post_pictures/'.$post->picture_url) }}">
-                            </div>
+                            @if ($post->picture_url != null)
+                                <div class="post-picture">
+                                    <img src ="{{ asset('storage/post_pictures/'.$post->picture_url) }}">
+                                </div>
+                            @endif
                             
                         </div>
                         
@@ -32,12 +34,12 @@
                             <p class="text-dark">posted at {{ $post->created_at }}</p>
                             
                             @if (Auth::id() == $post->user_id)
-                                <div class="row"> 
-                                    <div class="col-md-1 offset-md-10">
+                                <div style="display:flex; flex-direction:row-reverse;"> 
+                                    <div>
                                         {{-- 投稿編集ページへのフォーム --}}
                                         {!! link_to_route('posts.edit', '編集', ['post' => $post->id], ['class' => 'btn btn-secondary btn-sm']) !!}
                                     </div>
-                                    <div class="col-md-1">
+                                    <div>
                                         {{-- 投稿削除ボタンのフォーム --}}
                                         {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
                                             {!! Form::submit('削除', ['class' => 'btn btn-danger btn-sm']) !!}

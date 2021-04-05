@@ -31,4 +31,14 @@ class UserRequest extends FormRequest
             'profile_image' => [new MegaBytes(5)],
         ];
     }
+    
+    public function messages(){
+        return [
+            "required" => "必須項目です。",
+            "image" => "指定されたファイルではありません。",
+            "mines" => "指定された拡張子（PNG/JPG/GIF/JPEG）ではありません。",
+            "max" => "5Ｍを超えています。",
+            "dimensions" => "画像の横幅は最大500pxです。",
+            ];
+    }
 }
