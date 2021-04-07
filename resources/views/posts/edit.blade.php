@@ -20,7 +20,15 @@
             </div>
 
             {!! Form::submit('更新する', ['class' => 'btn btn-secondary mb-5']) !!}
+        {!! Form::close() !!}
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-sm-4　offset-sm-8 mb-3">
+        {{-- 投稿削除ボタンのフォーム --}}
+        {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
+            {!! Form::submit('このシェアを削除', ['class' => 'btn btn-danger btn-sm']) !!}
         {!! Form::close() !!}
     </div>
 </div>

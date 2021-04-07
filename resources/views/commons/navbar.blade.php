@@ -1,5 +1,5 @@
-<header class="mb-4" style="z-index:2000;">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light" style="z-index:1000;">
+<header class="mb-4 sticky-top">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/"><img src="{{ asset('/images/logo.png')}}"></a>
 
@@ -15,17 +15,20 @@
                     <li class="navi-item"><a class="nav-link" href="#">Max計算</a></li>
                     {{-- ユーザー一覧ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('users.index', 'ユーザー', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item dropdown" style="z-index:2000;">
+                    <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MyPage</a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="z-index:2000;">
+                        <ul class="dropdown-menu dropdown-menu-right">
                             {{-- ユーザ詳細ページへのリンク --}}
-                            <li class="dropdown-item" style="z-index:2000;">{!! link_to_route('users.show', 'プロフィール', ['user' => Auth::id()]) !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('users.show', 'プロフィール', ['user' => Auth::id()]) !!}</li>
                             {{-- お気に入り一覧ページへのリンク --}}
-                            <li class="nav-item" style="z-index:2000;"><a href="#" class="nav-link">お気に入り</a></li>
-                            
-                            <li class="dropdown-divider" style="z-index:2000;"></li>
+                            <li class="dropdown-item">
+                                <a href="{{ route('users.favorites', ['id' => Auth::id()]) }}" class="{{ Request::routeIs('users.favorites') ? 'active' : '' }}">
+                                    お気に入り
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
                             {{-- ログアウトへのリンク --}}
-                            <li class="dropdown-item" style="z-index:2000;">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
                         </ul>
                     </li>
                 @else

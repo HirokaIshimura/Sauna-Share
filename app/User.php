@@ -122,6 +122,7 @@ class User extends Authenticatable
     }
     
     
+    
     public function feed_posts()
     {
         // このユーザがフォロー中のユーザのidを取得して配列にする
@@ -133,8 +134,54 @@ class User extends Authenticatable
     }
     
     
+    
+    public function favorites()
+    {
+        return $this->belongsToMany(Post::class, 'favorite_posts', 'user_id', 'post_id')->withTimestamps();
+    }
+    
+    
+    public function favorite($postId)
+    {
+        // すでにお気に入りしているかの確認
+        $exist = $this->is_favoriting($postId);
+
+        if ($exist) {
+            // すでにお気に入りしていれば何もしない
+            return false;
+        } else {
+            // お気にりしていなければお気に入りする
+            $this->favorites()->attach($postId);
+            return true;
+        }
+    }
+    
+    
+    public function unfavorite($postId)
+    {
+        // すでにお気に入りしているかの確認
+        $exist = $this->is_favoriting($postId);
+
+        if ($exist) {
+            // すでにお気に入りしていればフォローを外す
+            $this->favorites()->detach($postId);
+            return true;
+        } else {
+            // お気に入りしていなければ何もしない
+            return false;
+        }
+    }
+    
+    
+    public function is_favoriting($postId)
+    {
+        return $this->favorites()->where('post_id', $postId)->exists();
+    }
+    
+    
+    
     public function loadRelationshipCounts()
     {
-        $this->loadCount('posts', 'followings', 'followers');
+        $this->loadCount('posts', 'followings', 'followers', 'favorites');
     }
 }

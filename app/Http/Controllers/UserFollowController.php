@@ -15,7 +15,7 @@ class UserFollowController extends Controller
     }
     
     
-    public function destroy($id)
+    public function destroy()
     {
         // 認証済みユーザ（閲覧者）が、 idのユーザをアンフォローする
         \Auth::user()->unfollow($id);

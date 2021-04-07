@@ -16,6 +16,18 @@ body {
 
 header {
     font-size: 1.5vw;
+    bottom: 60px;
+}
+
+.user-card {
+    position: sticky;
+    top: 100px;
+}
+
+.nav-tabs {
+    position: sticky;
+    top: 120px;
+    z-index: 1000;
 }
 
 p {
@@ -47,6 +59,11 @@ h3 {
 }
 
 .post-picture img{
+    width: 100%;
+    height: auto;
+}
+
+.form-group img{
     width: 100%;
     height: auto;
 }
