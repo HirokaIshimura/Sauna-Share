@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Post;
 
 //エイリアスに追加したファサードを呼び出す。
-use \InterventionImage;
+use InterventionImage;
 
 class PostsController extends Controller
 {
@@ -113,6 +113,6 @@ class PostsController extends Controller
         }
 
         // 前のURLへリダイレクトさせる
-        return back();
+        return redirect('/');
     }
 }

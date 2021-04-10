@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\User;
 
-use \InterventionImage;
+use InterventionImage;
 
 class UsersController extends Controller
 {
@@ -68,7 +68,7 @@ class UsersController extends Controller
     
     private function saveProfileImage($image, $id) {
         // get instance
-        $img = \Image::make($image);
+        $img = InterventionImage::make($image);
 
         // resize
         $img->fit(200, 200, function($constraint){
@@ -78,7 +78,7 @@ class UsersController extends Controller
         // save
         $file_name = 'profile_'.$id.'.'.$image->getClientOriginalExtension();
         $save_path = 'public/profiles/'.$file_name;
-        Storage::disk('local')->put($save_path, (string) $img->encode());
+        Storage::disk('local')->put($save_path, (string) $img->encode('jpg'));
 
         // return file name
         return $file_name;
@@ -153,14 +153,13 @@ class UsersController extends Controller
         // 関係するモデルの件数をロード
         $user->loadRelationshipCounts();
 
-        // ユーザのフォロワー一覧を取得
+        // ユーザのお気に入り一覧を取得
         $favorites = $user->favorites()->paginate(10);
 
-        // フォロワー一覧ビューでそれらを表示
+        // お気に入り一覧ビューでそれらを表示
         return view('users.favorites', [
             'user' => $user,
             'posts' => $favorites,
         ]);
-
     }
 }

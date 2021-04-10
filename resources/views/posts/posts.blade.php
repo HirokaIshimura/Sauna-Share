@@ -4,22 +4,16 @@
             @foreach ($posts as $post)
                 <li class="media mb-3">
                     <div class="media-body" style="display:flex;">
-                        <div class="card" style="flex-grow:1; width:100%; height:auto;">
+                        <div class="card" style="width:100%; height:auto;">
                             
                             <div class="card-header bg-dark">
-                                <img class="mr-2 rounded" style="width:50px; height:50px" src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像">
+                                <img class="mr-2" style="width:50px; height:50px; border-radius:50%;" src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像">
                                 {{-- 投稿の所有者のユーザ詳細ページへのリンク --}}
                                 <span>{!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id], ['class' => 'text-white']) !!}</span>
                             </div>
                             
-                            <div class="card-header row">
-                                <h4 class="col-10 text-dark ">{!! nl2br(e($post->title)) !!}</h4>
-                            @if (Auth::id() == $post->user_id)
-                                <div class="col-2">
-                                    {{-- 投稿編集ページへのフォーム --}}
-                                    {!! link_to_route('posts.edit', 'シェアを編集', ['post' => $post->id], ['class' => 'btn btn-secondary btn-sm']) !!}
-                                </div>
-                            @endif
+                            <div class="card-header">
+                                <h4 class="text-dark">{!! nl2br(e($post->title)) !!}</h4>
                             </div>
                             
                             <div class="card-body">
@@ -37,13 +31,20 @@
                                 
                             </div>
                             
-                            <div class="card-footer" style="display:flex; flex-direction:row-reverse;">
+                            <div class="card-footer bg-white" style="display:flex; flex-direction:row-reverse;">
                                 <div>
                                     <p class="text-dark">posted at {{ $post->created_at }}</p>
                                 </div>
+                            @if (Auth::id() == $post->user_id)
+                                <div>
+                                    {{-- 投稿編集ページへのフォーム --}}
+                                    {!! link_to_route('posts.edit', 'シェアを編集', ['post' => $post->id], ['class' => 'btn btn-secondary btn-sm']) !!}
+                                </div>
+                            @else
                                 <div>
                                     @include('favorite_posts.favorite_button')
                                 </div>
+                            @endif
                             </div>
                         </div>
                     </div>

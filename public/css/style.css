@@ -1,9 +1,9 @@
-body {
+.top-page {
     background-image: url(../images/girl-2607110_1280.jpg);  
     background-position: center center; 
-    background-repeat: no-repeat;  
-    background-attachment: fixed; 
+    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     background-color:rgba(255,255,255,0.1);
     background-blend-mode:lighten;
     font-family: 'Times New Roman' ;

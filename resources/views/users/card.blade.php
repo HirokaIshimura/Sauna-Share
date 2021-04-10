@@ -1,7 +1,7 @@
 <div class="user-card">
     {{-- ユーザのプロファイル画像を表示--}}
     <div class="user-image">
-        <img class="rounded img-fluid img-thumbnail my-4" src="{{ asset('storage/profiles/'.$user->profile_image) }}" alt="プロフィール画像">
+        <img class="img-fluid img-thumbnail my-4" style="border-radius:50%;" src="{{ asset('storage/profiles/'.$user->profile_image) }}" alt="プロフィール画像">
     </div>
     
     <div class="mb-3">

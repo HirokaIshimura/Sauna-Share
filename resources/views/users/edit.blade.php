@@ -15,8 +15,10 @@
                 
                 <p class="text-white ">プロフィール画像：</p>
                 <div class="form-group btn pb-4">
-                    <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
                     <input id="profile_image" type="file"  name="profile_image" onchange="previewImage(this);">
+                    <div>
+                        <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
+                    </div>
                 </div>
                 
                 <div class="form-group mb-5">

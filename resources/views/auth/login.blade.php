@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="text-center p-5">
+<div class="top-page">
+    <div class="text-center pt-5">
         <h1>ログイン</h1>
     </div>
 
@@ -29,4 +30,5 @@
             
         </div>
     </div>
+</div>
 @endsection

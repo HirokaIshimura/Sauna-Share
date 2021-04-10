@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="row">
-        <div class="col-3">
+        <div class="col-sm-3">
              @include('users.card')
         </div>
         
-        <div class="col-9">
+        <div class="col-sm-9">
             @include('users.navtabs')
             @include('posts.posts')
         </div>

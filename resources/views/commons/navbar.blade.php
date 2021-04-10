@@ -1,5 +1,5 @@
 <header class="mb-4 sticky-top">
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-primary bg-white">
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/"><img src="{{ asset('/images/logo.png')}}"></a>
 
@@ -12,7 +12,7 @@
             <ul class="navbar-nav">
                 @if(Auth::check())
                     <!--Max計算ページへのリンク-->
-                    <li class="navi-item"><a class="nav-link" href="#">Max計算</a></li>
+                    <li class="navi-item">{!! link_to_route('max.calculate', 'max計算', [], ['class' => 'nav-link']) !!}</li>
                     {{-- ユーザー一覧ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('users.index', 'ユーザー', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item dropdown">

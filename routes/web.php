@@ -34,11 +34,13 @@ Route::group(['middleware' => ['auth']], function () {
     });
     
     Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update', 'destroy']]);
-    
+
     Route::group(['prefix' => 'posts/{id}'], function () {
         Route::post('favorite', 'FavoritePostsController@store')->name('favorite.posts');
         Route::delete('unfavorite', 'FavoritePostsController@destroy')->name('unfavorite.posts');
     });
     
     Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
+    
+    Route::get('calculate', 'CalculateController@calculate')->name('max.calculate');
 });
