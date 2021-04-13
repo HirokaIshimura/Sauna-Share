@@ -234,5 +234,7 @@ return [
         'InterventionImage' => Intervention\Image\Facades\Image::class,
 
     ],
-
+    
+    'rakuten_id' => env('1032675426362554221', false),
+    'rakuten_key' => env('a74627ee573003ece9c19363c60766b0963ae271', false),
 ];

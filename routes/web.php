@@ -42,5 +42,8 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'edit', 'update', 'destroy']]);
     
-    Route::get('calculate', 'CalculateController@calculate')->name('max.calculate');
+    Route::get('search', 'SearchController@index');
+    Route::get('search/form', 'SearchController@form')->name('search.form');
+    Route::post('search', 'SearchController@index');
+    Route::post('search/form', 'SearchController@form');
 });

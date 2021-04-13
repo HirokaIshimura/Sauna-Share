@@ -6,13 +6,13 @@
                     <div class="media-body" style="display:flex;">
                         <div class="card" style="width:100%; height:auto;">
                             
-                            <div class="card-header bg-dark">
+                            <div class="card-header">
                                 <img class="mr-2" style="width:50px; height:50px; border-radius:50%;" src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像">
                                 {{-- 投稿の所有者のユーザ詳細ページへのリンク --}}
-                                <span>{!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id], ['class' => 'text-white']) !!}</span>
+                                <span>{!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id], ['class' => 'text-dark']) !!}</span>
                             </div>
                             
-                            <div class="card-header">
+                            <div class="card-header bg-white">
                                 <h4 class="text-dark">{!! nl2br(e($post->title)) !!}</h4>
                             </div>
                             

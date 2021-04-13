@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <title>Muscle Share</title>
+        <title>Sauna Share</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,7 +19,7 @@
             @include('commons.error_messages')
 
             @if(Auth::check())
-                <a href="/posts/create" id="create_post" style="z-index:1000; color:black;"><i class="fas fa-edit fa-5x"></i></a>
+                <a href="/posts/create" id="create_post" style="z-index:1000; color:orange;"><i class="fas fa-edit fa-5x"></i></a>
             @endif
             
             @yield('content')
