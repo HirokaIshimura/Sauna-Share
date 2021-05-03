@@ -1,0 +1,39 @@
+version: '3' 
+
+services:
+    
+  php: 
+    build: ./docker-config/php
+    container_name: php
+    volumes:
+      - .:/var/www/
+    ports:
+      - "9000:9000"
+    working_dir: /var/www/
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:1.18-alpine
+    build: ./docker-config/nginx
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www
+      - ./docker-config/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    working_dir: /var/www
+    depends_on:
+      - php
+      - mysql
+
+  mysql:
+    build: ./docker-config/mysql
+    container_name: mysql
+    volumes:
+      - db-store:/var/lib/mysql
+    ports:
+      -  "3306:3306"
+
+volumes:
+  db-store:
