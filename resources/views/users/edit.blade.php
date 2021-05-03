@@ -17,7 +17,7 @@
                 <div class="form-group btn pb-4">
                     <input id="profile_image" type="file"  name="profile_image" onchange="previewImage(this);">
                     <div>
-                        <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
+                        <img src="{{ asset('/storage/profiles/'.$user->profile_image) }}" id="img">
                     </div>
                 </div>
                 

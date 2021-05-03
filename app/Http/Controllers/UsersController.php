@@ -66,7 +66,7 @@ class UsersController extends Controller
     }
     
     
-    private function saveProfileImage($image, $id) {
+    private function saveProfileImage($image, $id){
         // get instance
         $img = InterventionImage::make($image);
 
