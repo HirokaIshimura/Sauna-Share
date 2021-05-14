@@ -64,13 +64,17 @@ return [
         ],
 
         'testing' => [
-            'driver'   => 'sqlite',
-            'database' => ':memory:', // SQLiteのインメモリ機能を使用
-            'prefix'   => '',
-            'options'  => [
-                // テストデータの永続化
-                PDO::ATTR_PERSISTENT => false,
-            ],
+            'driver' => 'mysql',
+            'host' => 'mysql',
+            'port' => '3306',
+            'database' => 'app_test',
+            'username' => 'hiroka',
+            'password' => 'hirokawebdbpass',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
         ],
 
 
