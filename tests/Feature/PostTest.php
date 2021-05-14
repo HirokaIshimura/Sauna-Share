@@ -86,7 +86,7 @@ class PostTest extends TestCase
             'content' => '投稿編集機能テスト',
             'user_id' => $this->user1->id,
         ])
-        ->assertOk();
+        ->assertRedirect('/');
     }
 
 
@@ -94,6 +94,6 @@ class PostTest extends TestCase
     {
         $response = $this->actingAs($this->user1);
         $response->delete('posts/'.$this->post1->id)
-            ->assertRedirect('/');
+            ->assertSessionHasNoErrors();
     }
 }
