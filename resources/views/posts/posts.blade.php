@@ -7,7 +7,11 @@
                         <div class="card" style="width:100%; height:auto;">
                             
                             <div class="card-header">
-                                <img class="mr-2" style="width:50px; height:50px; border-radius:50%;" src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像">
+                                @if ($user->profile_image == null)
+                                <i class="mr-2 fas fa-user" style="color:black; size:7x; width:50px; height:50px; border-radius:50%;"></i>
+                                @else
+                                <img class="mr-2" style="width:50px; height:50px; border-radius:50%;" src="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $post->user->profile_image }}" alt="プロフィール画像">
+                                @endif
                                 {{-- 投稿の所有者のユーザ詳細ページへのリンク --}}
                                 <span>{!! link_to_route('users.show', $post->user->name, ['user' => $post->user->id], ['class' => 'text-dark']) !!}</span>
                             </div>
@@ -25,7 +29,7 @@
                                 
                                 @if ($post->picture_url != null)
                                     <div class="post-picture">
-                                        <img src ="{{ asset('storage/post_pictures/'.$post->picture_url) }}">
+                                        <img src ="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $post->picture_url }}">
                                     </div>
                                 @endif
                                 

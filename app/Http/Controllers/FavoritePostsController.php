@@ -11,7 +11,6 @@ class FavoritePostsController extends Controller
         \Auth::user()->favorite($id);
 
         return back();
-
     }
     
     public function destroy($id)
@@ -19,6 +18,5 @@ class FavoritePostsController extends Controller
         \Auth::user()->unfavorite($id);
 
         return back();
-
     }
 }

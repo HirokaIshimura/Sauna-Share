@@ -14,7 +14,8 @@ use InterventionImage;
 
 class UsersController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $users = User::orderBy('id', 'asc')->paginate(10);
         
         return view('users.index', [
@@ -23,7 +24,8 @@ class UsersController extends Controller
     }
     
     
-    public function show($id){
+    public function show($id)
+    {
         $user = User::findOrFail($id);
         
         // 関係するモデルの件数をロード
@@ -40,7 +42,8 @@ class UsersController extends Controller
     }
     
     
-    public function edit($id){
+    public function edit($id)
+    {
         $user = User::findOrFail($id);
         
         return view('users.edit', [
@@ -49,46 +52,28 @@ class UsersController extends Controller
     }
     
     
-    public function update(UserRequest $request, $id){
+    public function update(UserRequest $request, $id)
+    {
         $user = User::findOrFail($id);
-        $form = $request->all();
         $profileImage = $request->file('profile_image');
         
         if ($profileImage != null) {
-            $form['profile_image'] = $this->saveProfileImage($profileImage, $id); // return file name
+            $path = Storage::disk('s3')->putFile('/profile_images', $profileImage, 'public');
+            $user->profile_image = $path;
         }
 
-        unset($form['_token']);
-        unset($form['_method']);
-        $user->fill($form)->save();
+        $user->name = $request->name;
+
+        $user->save();
         
         return redirect('users/'.$user->id);
     }
     
-    
-    private function saveProfileImage($image, $id){
-        // get instance
-        $img = InterventionImage::make($image);
-
-        // resize
-        $img->fit(200, 200, function($constraint){
-            $constraint->upsize(); 
-        });
-        
-        // save
-        $file_name = 'profile_'.$id.'.'.$image->getClientOriginalExtension();
-        $save_path = 'public/profiles/'.$file_name;
-        Storage::disk('local')->put($save_path, (string) $img->encode('jpg'));
-
-        // return file name
-        return $file_name;
-    }
-    
-    
-    public function destroy($id){
+    public function destroy($id)
+    {
         $user = User::findOrFail($id);
-        $deletePath = 'public/profiles/'. $user->profile_image;
-        Storage::disk('local')->delete($deletePath);
+        $deletePath = $user->profile_image;
+        Storage::disk('s3')->delete($deletePath);
         $user->delete();
         
         return redirect('/');

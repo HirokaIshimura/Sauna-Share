@@ -40,7 +40,7 @@ return [
             'url' => env('DATABASE_URL'),
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
+            'foreign_key_constraints' => true,
         ],
 
         'mysql' => [
@@ -62,6 +62,17 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+
+        'testing' => [
+            'driver'   => 'sqlite',
+            'database' => ':memory:', // SQLiteのインメモリ機能を使用
+            'prefix'   => '',
+            'options'  => [
+                // テストデータの永続化
+                PDO::ATTR_PERSISTENT => false,
+            ],
+        ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',

@@ -1,7 +1,11 @@
 <div class="user-card">
     {{-- ユーザのプロファイル画像を表示--}}
     <div class="user-image">
-        <img class="img-fluid img-thumbnail my-4" style="border-radius:50%;" src="{{ asset('/storage/profiles/'. $user->profile_image) }}" alt="プロフィール画像">
+        @if ($user->profile_image == null)
+        <i class="mr-2 fas fa-user" style="color:black; size:7x; width:150px; height:150px; border-radius:50%;"></i>
+        @else
+        <img class="mr-2" style="width:150px; height:150px; border-radius:50%;" src="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $user->profile_image }}" alt="プロフィール画像">
+        @endif
     </div>
     
     <div class="mb-3">

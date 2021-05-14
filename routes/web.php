@@ -44,6 +44,6 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('search', 'SearchController@index');
     Route::get('search/form', 'SearchController@form')->name('search.form');
-    Route::post('search', 'SearchController@index');
+    Route::post('search', 'SearchController@index')->name('search.index');
     Route::post('search/form', 'SearchController@form');
 });

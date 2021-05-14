@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<h1>投稿を編集</h1>
 <div class="row mx-auto">
     <div class="col-sm-8 offset-sm-2">
         {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'put']) !!}
@@ -11,7 +12,7 @@
             
             <div class="form-group mb-2">
                 <p>写真</p>
-                <img src="{{ asset('storage/post_pictures/'.$post->picture_url) }}" id="img">
+                <img src ="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $post->picture_url }}">
             </div>
             
             <div class="form-group mb-4">

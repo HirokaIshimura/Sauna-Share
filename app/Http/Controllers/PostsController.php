@@ -36,11 +36,11 @@ class PostsController extends Controller
     
     public function create()
     {
-        // Postモデルのインスタンスを作成
-       $post = new Post();
-       
-       return view('posts.create', [
-            'post' => $post,
+            // Postモデルのインスタンスを作成
+        $post = new Post();
+        
+        return view('posts.create', [
+                'post' => $post,
         ]);
     }
     
@@ -51,9 +51,7 @@ class PostsController extends Controller
         $file = $request->file('picture_url');
         
         if ($file != null){
-            $path = $file->getClientOriginalName();
-            //アスペクト比を維持、画像サイズを横幅1080pxにして保存する。
-            InterventionImage::make($file)->resize(550, null, function ($constraint) {$constraint->aspectRatio();})->save(public_path('storage/post_pictures/' . $path));
+            $path = Storage::disk('s3')->putFile('/posts_images', $file, 'public');
             $form['picture_url'] = $path;
         }
         
@@ -63,7 +61,6 @@ class PostsController extends Controller
         $request->user()->posts()->create($form);
 
         return redirect('/');
-        
     }
     
     
@@ -79,7 +76,6 @@ class PostsController extends Controller
                 'post' => $post,
             ]);
         }
-
     }
     
     
@@ -104,11 +100,11 @@ class PostsController extends Controller
     {
         // idの値で投稿を検索して取得
         $post = \App\Post::findOrFail($id);
-        $deletePath = 'public/post_pictures/'.$post->picture_url;
+        $deletePath = $post->picture_url;
 
         // 認証済みユーザ（閲覧者）がその投稿の所有者である場合は、投稿を削除
         if (\Auth::id() === $post->user_id) {
-            Storage::disk('local')->delete($deletePath);
+            Storage::disk('s3')->delete($deletePath);
             $post->delete();
         }
 
