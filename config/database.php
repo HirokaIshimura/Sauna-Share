@@ -65,7 +65,7 @@ return [
 
         'testing' => [
             'driver' => 'mysql',
-            'host' => 'mysql',
+            'host' => 'mysql_test',
             'port' => '3306',
             'database' => 'app_test',
             'username' => 'hiroka',

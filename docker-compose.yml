@@ -34,6 +34,10 @@ services:
       - db-store:/var/lib/mysql
     ports:
       -  "3306:3306"
+  
+  db-testing:
+    build: ./docker-config/mysql
+    container_name: mysql_test
 
 volumes:
   db-store:
