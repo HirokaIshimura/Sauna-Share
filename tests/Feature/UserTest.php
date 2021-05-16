@@ -72,7 +72,8 @@ class UserTest extends TestCase
     public function testDelete()
     {
         $response = $this->actingAs($this->user1);
-        $response->delete('/users/1');
+        $response = $this->delete('/users/1');
+        $response->assertSessionHasNoErrors();
         $this->assertInvalidCredentials([
             'email' => 'user1@example.com',
             'password' => 'password',
