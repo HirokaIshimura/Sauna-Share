@@ -15,7 +15,7 @@ jobs:
       - APP_DEBUG: true
       - APP_ENV: testing
       - APP_KEY: base64:rphhC6gY6K4axA7khGGs7kFTgDY1t6K1eEn9AaKuNIA=
-      - DB_HOST: 127.0.0.1
+      - DB_HOST: db-testing
       - DB_CONNECTION: testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
