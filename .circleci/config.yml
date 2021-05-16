@@ -55,9 +55,10 @@ jobs:
     machine:
       image: circleci/classic:edge
     steps:
-      - checkout
       - add_ssh_keys:
-      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /var/www/ && git pull'
+        fingerprints:
+              - "21:59:f6:23:fb:72:9e:66:fa:fa:b1:cb:7c:32:6f:12"
+      - run: ssh ${USER_NAME}@${HOST_NAME} 'cd /var/www/ && git pull origin main'
 
 workflows:
   version: 2
