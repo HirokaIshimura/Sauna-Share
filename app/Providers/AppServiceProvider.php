@@ -25,9 +25,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+<<<<<<< Updated upstream
         // SQLiteの時、外部キー制約を有効にする
         if (DB::getDriverName() == 'sqlite') { 
             Schema::enableForeignKeyConstraints();
         }
+=======
+	    //
+>>>>>>> Stashed changes
     }
 }
