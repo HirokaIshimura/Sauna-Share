@@ -14,7 +14,7 @@ jobs:
     environment:
       - APP_DEBUG: true
       - APP_ENV: testing
-      - APP_KEY: base64:rphhC6gY6K4axA7khGGs7kFTgDY1t6K1eEn9AaKuNIA=
+      - APP_KEY: base64:jBEtyv9ZcQ7gLT0uTtD9hFGr8+8ogMj2P3dT93VnsSg=
       - DB_HOST: db-testing
       - DB_CONNECTION: testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true

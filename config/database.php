@@ -65,7 +65,7 @@ return [
 
         'testing' => [
             'driver' => 'mysql',
-            'host' => 'db-testing',
+            'host' => '127.0.0.1',
             'port' => '3306',
             'database' => 'app_test',
             'username' => env('DB_USERNAME', ''),
@@ -73,6 +73,7 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
+            'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
             'options' => extension_loaded('pdo_mysql') ? array_filter([
