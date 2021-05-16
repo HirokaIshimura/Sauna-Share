@@ -37,7 +37,7 @@ services:
   
   db-testing:
     build: ./docker-config/mysql
-    container_name: mysql_test
+    container_name: db-testing
 
 volumes:
   db-store:
