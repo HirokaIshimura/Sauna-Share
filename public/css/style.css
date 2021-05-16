@@ -36,7 +36,6 @@ h1 {
 }
 
 p {
-    font-size: 1.5vw;
     margin: auto;
 }
 
@@ -73,6 +72,8 @@ h3 {
     height: auto;
 }
 
-li {
+.doropdown-menu li {
+    font-size: 20px;
     opacity: 0.9;
 }
+

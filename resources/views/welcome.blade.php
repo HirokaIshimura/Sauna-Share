@@ -10,8 +10,8 @@
     @else
         <div class="top-page">
             <div class="text-center my-auto">
-                <h1 class="headcontent p-4">Welcome to SaunaShare</h1>
-                <p class="p-4" style="line-height:4rem">
+                <h1 class="headcontent p-4" style="font-size:70px;">Welcome to SaunaShare</h1>
+                <p class="p-4" style="line-height:4rem; font-size:20px;">
                     SaunaShareは無料で始められて、あなたが行ったサウナを写真と共にシェアできます。
                     このコミュニティを通して、新しいサウナ仲間ができるかもしれません。
                     フォローしている友達のシェアから、行ってみたいサウナが発見できるかもしれません。
