@@ -16,7 +16,7 @@ jobs:
       - APP_DEBUG: true
       - APP_ENV: testing
       - APP_KEY: base64:jBEtyv9ZcQ7gLT0uTtD9hFGr8+8ogMj2P3dT93VnsSg=
-      - DB_CONNECTION: circleci_test
+      - DB_CONNECTION: testing
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
     working_directory: ~/Sauna-Share
@@ -49,4 +49,4 @@ jobs:
       - run: php artisan migrate
 
       # run tests!
-      - run: ./vendor/bin/phpunit
+      - run: php ./vendor/bin/phpunit
