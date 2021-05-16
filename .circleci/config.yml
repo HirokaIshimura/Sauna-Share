@@ -4,7 +4,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/php:8.0-fpm-buster
-      - image: circleci/mysql:8.0
+      - image: circleci/mysql:5.7
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -15,7 +15,7 @@ jobs:
       - APP_DEBUG: true
       - APP_ENV: testing
       - APP_KEY: base64:rphhC6gY6K4axA7khGGs7kFTgDY1t6K1eEn9AaKuNIA=
-      - DB_HOST: localhost
+      - DB_HOST: 127.0.0.1
       - DB_CONNECTION: mysql
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
