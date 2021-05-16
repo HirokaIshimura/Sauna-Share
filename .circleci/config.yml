@@ -49,4 +49,4 @@ jobs:
       - run: php artisan migrate
 
       # run tests!
-      - run: phpunit
+      - run: ./vendor/bin/phpunit
