@@ -19,8 +19,6 @@ jobs:
       - DB_CONNECTION: circleci_test
       - MYSQL_ALLOW_EMPTY_PASSWORD: true
 
-    working_directory: ~/
-
     steps:
       - checkout
 
