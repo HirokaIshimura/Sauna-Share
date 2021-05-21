@@ -1,4 +1,4 @@
-.container {
+body {
     background-image: url(../images/sauna-2844863_1280.jpg);  
     background-position: center center; 
     background-repeat: no-repeat;
@@ -8,11 +8,6 @@
     background-blend-mode: lighten;
     font-family: 'Times New Roman' ;
     color: white;
-}
-
-header {
-    opacity: 0.9;
-    bottom: 50px;
 }
 
 h1 {
