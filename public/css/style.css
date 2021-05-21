@@ -10,12 +10,7 @@
     color: white;
 }
 
-.headcontent {
-    font-size: 7vw;
-}
-
 header {
-    font-size: 1.5vw;
     opacity: 0.9;
     bottom: 50px;
 }
@@ -70,9 +65,4 @@ h3 {
 .form-group img{
     width: 100%;
     height: auto;
-}
-
-.doropdown-menu li {
-    font-size: 20px;
-    opacity: 0.9;
 }
