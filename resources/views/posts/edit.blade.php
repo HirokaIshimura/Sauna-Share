@@ -6,7 +6,7 @@
     <div class="col-sm-8 offset-sm-2">
         {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'put']) !!}
             <div class="form-group mb-2">
-                {!! Form::label('title', '部位:') !!}
+                {!! Form::label('title', '名前:') !!}
                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
             </div>
             
@@ -16,7 +16,7 @@
             </div>
             
             <div class="form-group mb-4">
-                {!! Form::label('content', 'メニュー:') !!}
+                {!! Form::label('content', '詳細:') !!}
                 {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
             </div>
 

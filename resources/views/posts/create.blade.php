@@ -7,12 +7,12 @@
         @csrf
             <div class="form">
                 <div class="form-title">
-                    <p>部位</p>
+                    <p>名前</p>
                     <input class="mb-4" name="title" value="{{ old('title') }}">
                 </div>
                 
                 <div class="form-content">
-                    <p>メニュー</p> 
+                    <p>詳細</p> 
                     <textarea class="mb-4" name="content" cols="50" rows="10">{{ old('content') }}</textarea>        
                 </div>
                 

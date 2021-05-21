@@ -1,7 +1,7 @@
 <header class="mb-4 sticky-top">
     <nav class="navbar navbar-expand-sm navbar-light bg-white">
         {{-- トップページへのリンク --}}
-        <a class="navbar-brand" href="/"><img src="{{ asset('/images/toplogo.png')}}" style="width:100px; height:60px;"></a>
+        <a class="navbar-brand" href="/"><i class="fas fa-home"></i></a>
 
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>

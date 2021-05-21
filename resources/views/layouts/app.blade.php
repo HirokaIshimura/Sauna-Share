@@ -15,14 +15,16 @@
         @include('commons.navbar')
 
         <div class="container">
-            {{-- エラーメッセージ --}}
-            @include('commons.error_messages')
-
-            @if(Auth::check())
-                <a href="/posts/create" id="create_post" style="z-index:1000; color:orange;"><i class="fas fa-edit fa-5x"></i></a>
-            @endif
-            
-            @yield('content')
+            <div class="bg-rgba">
+                {{-- エラーメッセージ --}}
+                @include('commons.error_messages')
+    
+                @if(Auth::check())
+                    <a href="/posts/create" id="create_post" style="z-index:1000; color:orange;"><i class="fas fa-edit fa-4x"></i></a>
+                @endif
+                
+                @yield('content')
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
