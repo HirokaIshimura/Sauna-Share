@@ -5,6 +5,7 @@
 <div class="row mx-auto">
     <div class="col-sm-8 offset-sm-2">
         {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'put']) !!}
+        @csrf
             <div class="form-group mb-2">
                 {!! Form::label('title', '名前:') !!}
                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
