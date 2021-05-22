@@ -83,7 +83,7 @@ class PostTest extends TestCase
         $response->put('posts/'.$this->post1->id, [
             'id' => $this->post1->id,
             'title' => 'テスト',
-            'content' => '投稿編集機能テスト',
+            'content' => '投稿編集機能テストを実行する',
             'user_id' => $this->user1->id,
         ])
         ->assertRedirect('/');
