@@ -29,7 +29,7 @@
                 <p>＊採用担当者様は、パスワードを打ち込んでいただくとログイン可能となっております。<br><br>
                     ＜採用担当者様専用アカウント><br>
                     メールアドレス：recruit@example.com<br>
-                    パスワード：password<br>
+                    パスワード：testpass<br>
                 </p>
             </div>
 

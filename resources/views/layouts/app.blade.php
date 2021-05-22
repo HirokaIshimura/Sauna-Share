@@ -24,7 +24,7 @@
             @include('commons.error_messages')
 
             @if(Auth::check())
-                <a href="/posts/create" id="create_post" style="z-index:1000; color:orange;">
+                <a href="/posts/create" id="create_post" style="z-index:1000; color:white;">
                     <i class="fas fa-edit fa-3x"></i>
                 </a>
             @endif
