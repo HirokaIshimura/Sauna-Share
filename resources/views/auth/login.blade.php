@@ -12,7 +12,7 @@
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group pb-4">
                     {!! Form::label('email', 'メールアドレス') !!}
-                    {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
+                    {!! Form::email('email', 'recruit@example.com', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group pb-4">
@@ -25,9 +25,16 @@
                 </div>
             {!! Form::close() !!}
 
-            {{-- ユーザ登録ページへのリンク --}}
-            <p class="mb-5">ユーザー登録されていない方は {!! link_to_route('signup.get', 'こちら') !!}</p>
-            
+            <div class="pb-4">
+                <p>＊採用担当者様は、パスワードを打ち込んでいただくとログイン可能となっております。<br><br>
+                    ＜採用担当者様専用アカウント><br>
+                    メールアドレス：recruit@example.com<br>
+                    パスワード：password<br>
+                </p>
+            </div>
+
+            <!-- ユーザ登録ページへのリンク -->
+            <p class="mb-4">ユーザー登録されていない方は {!! link_to_route('signup.get', 'こちら') !!}</p>
         </div>
     </div>
 </div>

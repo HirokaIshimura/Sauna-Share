@@ -11,7 +11,7 @@
         <div class="top-page">
             <div class="text-center my-auto">
                 <h1 class="headcontent p-4" style="font-size:70px;">Welcome to SaunaShare</h1>
-                <p class="p-4" style="line-height:4rem; font-size:20px;">
+                <p class="pt-4 px-4" style="line-height:4rem; font-size:20px;">
                     SaunaShareは無料で始められて、あなたが行ったサウナを写真と共にシェアできます。
                     このコミュニティを通して、新しいサウナ仲間ができるかもしれません。
                     フォローしている友達のシェアから、行ってみたいサウナが発見できるかもしれません。
@@ -26,6 +26,10 @@
                         <!--ログインページへのリンク-->
                         {!! link_to_route('login', 'ログインする', [], ['class' => 'btn btn-lg btn-secondary btn-block']) !!}
                     </div>
+                </div>
+                <div class="pb-5">
+                    <p>＊採用担当者様はログインへお進みください。<br>
+                    あらかじめセットされているログイン情報でログイン可能となっております。</p>
                 </div>
             </div>
         </div>
