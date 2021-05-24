@@ -27,8 +27,8 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'max:15',
-            'profile_image' => 'file|image|mimes:JPG, PNG, GIF|dimensions:max_width=500',
-            'profile_image' => [new MegaBytes(5)],
+            'profile_image' => 'file|image|mimes:JPG, PNG, GIF, HEIC|dimensions:max_width=500',
+            'profile_image' => [new MegaBytes(10)],
         ];
     }
     
@@ -36,8 +36,8 @@ class UserRequest extends FormRequest
         return [
             "required" => "必須項目です。",
             "image" => "指定されたファイルではありません。",
-            "mines" => "指定された拡張子（PNG/JPG/GIF）ではありません。",
-            "max" => "5Ｍを超えています。",
+            "mines" => "指定された拡張子（PNG/JPG/GIF/HEIC）ではありません。",
+            "max" => "10Ｍを超えています。",
             "dimensions" => "画像の横幅は最大500pxです。",
             ];
     }

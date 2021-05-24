@@ -15,14 +15,14 @@
                 
                 <p class="text-white ">プロフィール画像：</p>
                 <div class="form-group btn pb-4">
-                    <input id="profile_image" type="file"  name="profile_image" onchange="previewImage(this);">
                     <div>
                         @if ($user->profile_image == null)
-                        <i class="mr-2 fas fa-user" style="color:black; size:7x; width:150px; height:150px; border-radius:50%;"></i>
+                        <img class="mr-2" id="img" style="width:180px; height:180px; border-radius:50%;" src="{{ asset('/images/user-solid.svg') }}" alt="プロフィール画像">
                         @else
-                        <img class="mr-2" style="width:150px; height:150px; border-radius:50%;" src="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $user->profile_image }}" alt="プロフィール画像">
+                        <img class="mr-2" id="img" style="width:180px; height:180px; border-radius:50%;" src="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $user->profile_image }}" alt="プロフィール画像">
                         @endif
                     </div>
+                    <input id="profile_image" type="file"  name="profile_image" onchange="previewImage(this);">
                 </div>
                 
                 <div class="form-group mb-5">
