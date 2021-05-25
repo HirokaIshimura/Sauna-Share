@@ -1,5 +1,5 @@
 body {
-    background-image: url(../images/sauna-2844863_1280.jpg);  
+    background-image: url(../images/5325598.jpg);  
     background-position: center center; 
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,7 +7,7 @@ body {
     background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
     font-family: 'Times New Roman' ;
-    color: white;
+    color: black;
 }
 
 header {
@@ -63,4 +63,18 @@ h3 {
 .form-group img{
     width: 100%;
     height: auto;
+}
+
+footer {
+    height: 20px;
+    background-color: darkgray;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer a{
+    margin: 0 auto;
+    color: white;
+    display: block;
 }

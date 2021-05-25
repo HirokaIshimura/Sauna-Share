@@ -15,22 +15,23 @@
     </head>
 
     <body>
-
         {{-- ナビゲーションバー --}}
         @include('commons.navbar')
 
-        <div class="container">
-            {{-- エラーメッセージ --}}
-            @include('commons.error_messages')
+        {{-- エラーメッセージ --}}
+        @include('commons.error_messages')
 
-            @if(Auth::check())
-                <a href="/posts/create" id="create_post" style="z-index:1000; color:white;">
-                    <i class="fas fa-edit fa-3x"></i>
-                </a>
-            @endif
-            
-            @yield('content')
-        </div>
+        @if(Auth::check())
+            <a href="/posts/create" id="create_post" style="z-index:1000; color:white;">
+                <i class="fas fa-edit fa-3x"></i>
+            </a>
+        @endif
+        
+        @yield('content')
+
+        <footer>
+            <a href="https://jp.freepik.com/vectors/people">Stories - jp.freepik.com によって作成された people ベクトル</a>
+        </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
