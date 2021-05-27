@@ -2,7 +2,7 @@
 
 @section('content')
     @if(Auth::check())
-        <div class="row m-auto container">
+        <div class="row m-auto">
             <div class="col-sm-6 offset-sm-3">
                 @include('posts.index')
             </div>

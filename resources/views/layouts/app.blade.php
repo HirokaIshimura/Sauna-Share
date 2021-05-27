@@ -17,18 +17,19 @@
     <body>
         {{-- ナビゲーションバー --}}
         @include('commons.navbar')
-
-        {{-- エラーメッセージ --}}
-        @include('commons.error_messages')
-
-        @if(Auth::check())
-            <a href="/posts/create" id="create_post" style="z-index:1000; color:white;">
-                <i class="fas fa-edit fa-3x"></i>
-            </a>
-        @endif
         
-        @yield('content')
-
+        <div class="container">
+            {{-- エラーメッセージ --}}
+            @include('commons.error_messages')
+    
+            @if(Auth::check())
+                <a href="/posts/create" id="create_post">
+                    <i class="fas fa-edit fa-3x"></i>
+                </a>
+            @endif
+            
+            @yield('content')
+        </div>    
         <footer>
             <a href="https://jp.freepik.com/vectors/people">Stories - jp.freepik.com によって作成された people ベクトル</a>
         </footer>

@@ -10,8 +10,25 @@ body {
     color: black;
 }
 
+#create_post {
+    position: fixed;
+    z-index: 1000;
+    bottom: 5%;
+    right: 5%;
+    width: 10%;
+    text-decoration: none;
+}
+
+.fa-edit {
+    z-index: 1000;
+    color: white;
+    background-color: rgb(0, 89, 255);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 50%;
+}
+
 header {
-    opacity: 0.9;
     bottom: 50px;
 }
 
@@ -19,14 +36,29 @@ h1 {
     margin-top: 10px;
 }
 
-.user-card {
+.timeline, .users-index {
     position: sticky;
-    top: 100px;
+    top: 70px;
+    z-index: 1000;
+    background-color: burlywood;
+    text-align: center;
+}
+
+.timeline a , .users-index a{
+    color: white;
+}
+
+.user-card {
+    padding-bottom: 10px;
+}
+
+.user-list-card {
+    background-color:silver;
 }
 
 .nav-tabs {
     position: sticky;
-    top: 100px;
+    top: 70px;
     z-index: 1000;
 }
 
@@ -43,13 +75,6 @@ h3 {
     font-weight: bolder;
 }
 
-#create_post {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    width: 10%;
-    text-decoration: none;
-}
 
 .user-image {
     border-radius: 50%;
@@ -60,9 +85,51 @@ h3 {
     height: auto;
 }
 
+.post-card-head {
+    background-color: rgb(189, 222, 135);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 78px;
+}
+
+.user-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-pills .nav-link.active{
+    background-color: burlywood;
+}
+
+.nav-pills .nav-link{
+    color:black;
+}
+
+.user-card-name h2{
+      font-size: xx-large;
+      font-weight: bolder;  
+}
+
 .form-group img{
     width: 100%;
     height: auto;
+}
+
+table {
+    background-color: burlywood;
+}
+
+.search-head {
+    position: sticky;
+    top:100px;
+    z-index: 1000;
+}
+
+.search-result {
+    position: sticky;
+    top: 195px;
+    z-index: 1000;
 }
 
 footer {

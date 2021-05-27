@@ -1,5 +1,5 @@
 <header class="mb-4 sticky-top">
-    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         {{-- トップページへのリンク --}}
         <a class="navbar-brand" href="/"><i class="fas fa-home fa-2x"></i></a>
 
@@ -20,7 +20,7 @@
                         {!! link_to_route('users.index', 'ユーザー', [], ['class' => 'nav-link', 'style' => 'font-size:20px']) !!}
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="font-size:20px">MyPage</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" style="font-size:20px">マイページ</a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <!-- ユーザ詳細ページへのリンク -->
                             <li class="dropdown-item">
