@@ -4,6 +4,7 @@
 <h1>投稿を編集</h1>
 <div class="row mx-auto">
     <div class="col-sm-8 offset-sm-2">
+
         {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'put']) !!}
         @csrf
             <div class="form-group mb-2">
@@ -21,17 +22,14 @@
                 {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
             </div>
 
-            {!! Form::submit('更新する', ['class' => 'btn btn-secondary mb-5']) !!}
+            {!! Form::submit('更新する', ['class' => 'btn btn-primary mb-5']) !!}
         {!! Form::close() !!}
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-4　offset-sm-8 mb-3">
         {{-- 投稿削除ボタンのフォーム --}}
         {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
             {!! Form::submit('このシェアを削除', ['class' => 'btn btn-danger btn-sm']) !!}
         {!! Form::close() !!}
     </div>
 </div>
+
 @endsection
