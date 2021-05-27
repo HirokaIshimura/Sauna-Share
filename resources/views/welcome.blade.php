@@ -18,17 +18,21 @@
                     さあ、あなたも新しいサウナコミュニティを体験してみましょう。
                 </p>
                 <div class="row">
-                    <div class="offset-md-1 col-md-5 p-4 mt-md-5">
+                    <div class="offset-md-1 col-md-3 p-4 mt-md-5">
                         <!--ユーザー登録ページのリンク-->
                         {!! link_to_route('signup.get', 'ユーザー登録', [], ['class' => 'btn btn-lg btn-secondary btn-block']) !!}
                     </div>
-                    <div class="col-md-5 p-4 mt-md-5">
+                    <div class="col-md-3 p-4 mt-md-5">
                         <!--ログインページへのリンク-->
-                        {!! link_to_route('login', 'ログインする', [], ['class' => 'btn btn-lg btn-secondary btn-block']) !!}
+                        {!! link_to_route('login', 'ログイン', [], ['class' => 'btn btn-lg btn-secondary btn-block']) !!}
+                    </div>
+                    <div class="col-md-3 p-4 mt-md-5">
+                        <!--ログインページへのリンク-->
+                        {!! link_to_route('guestlogin', 'ゲストログイン', [], ['class' => 'btn btn-lg btn-secondary btn-block']) !!}
                     </div>
                 </div>
                 <div class="pb-5">
-                    <p>＊採用担当者様はログインへお進みください。<br>
+                    <p style="font-size:20px;">＊採用担当者様はゲストログインへお進みください。<br>
                     あらかじめセットされているログイン情報でログイン可能となっております。</p>
                 </div>
             </div>

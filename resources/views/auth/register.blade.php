@@ -26,7 +26,7 @@
                     {!! Form::label('password_confirmation', 'パスワード（確認）') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
-                <div class="form-group pt-5 mb-5">
+                <div class="form-group pt-3 mb-5">
                     {!! Form::submit('登録する', ['class' => 'btn btn-secondary btn-block']) !!}
                 </div>
     
