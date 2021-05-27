@@ -8,21 +8,17 @@
         @endif
     </div>
     
-    <div class="mb-3">
-        <h3>{{ $user->name }}</h3>
-    </div style="display:flex; flex-direction:column;">
+    <div class="mb-3 user-card-name">
+        <h2>{{ $user->name }}</h2>
+    </div>
+
     @if (Auth::id() == $user->id)
-        <div class="my-2">
-            {{-- ユーザープロフィール編集ページへのリンク --}}
-             {!! link_to_route('users.edit', 'プロフィールを編集', ['user' => $user->id], ['class' => 'btn btn-primary btn-sm']) !!}
-        </div>
-        <div class="my-2">
-            {{-- アカウント削除ページへのリンク --}}
-            {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
-                {!! Form::submit('アカウントを削除', ['class' => 'btn btn-danger btn-sm']) !!}
-            {!! Form::close() !!}
-        </div>
+    <div class="my-2 user-card-edit">
+        <!-- ユーザープロフィール編集ページへのリンク -->
+        {!! link_to_route('users.edit', 'プロフィールを編集', ['user' => $user->id], ['class' => 'btn btn-secondary btn-sm']) !!}
+    </div>
     @endif
+
     {{-- フォロー／アンフォローボタン --}}
     @include('user_follow.follow_button')
 </div>
