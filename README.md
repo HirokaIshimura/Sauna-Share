@@ -1,10 +1,16 @@
 # Sauna-Share
-<https://app.hiroka-portfolio.com>
-
 自分が行ったおすすめのサウナを写真と一緒に投稿してシェアできるサイトです。
+
 楽天APIを導入してサウナを楽しむためのグッズの検索も可能です。
+
 レスポンシブ対応しているのでスマホからでも利用することができます。
+
 AWSを用いたインフラの構築や、開発環境にdockerとdocker-composeの導入、CircleCIを使ったCI/CDパイプラインGitHubでのissuesでのIssuesとPull requestを活用した擬似チーム開発など、本番を意識して取り組みました。
+
+
+アプリURL
+
+<https://app.hiroka-portfolio.com>
 
 ![トップページ](https://user-images.githubusercontent.com/70800437/119858439-6ef7fe80-bf4f-11eb-85d7-f40af7453599.png)
 
@@ -33,9 +39,9 @@ AWSを用いたインフラの構築や、開発環境にdockerとdocker-compose
 # 機能一覧
 - ユーザー登録、ログイン機能
 - 記事投稿、削除機能
-  - 写真投稿機能(Ajax)
+  - 写真投稿、削除機能(Ajax)
 - お気に入り機能
-- フォロー機能
+- フォローアンフォロー機能
 - ページネーション機能
 - 楽天APIでの商品検索機能
 
