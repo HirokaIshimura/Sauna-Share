@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div>
+<div class="search-head">
     <h1>サウナグッズ検索</h1>
     
     {!! Form::open(['action' => 'SearchController@index']) !!}
@@ -19,7 +19,7 @@
 </div>
 
 @if($items > 0)
-    <h2>&quot;{{ $keyword }}&quot;の検索結果</h2>
+    <h2 class="search-result">&quot;{{ $keyword }}&quot;の検索結果</h2>
     <table class="bg-muted">
         <thead class="table table-striped table-bordered">
             <tr>
@@ -35,7 +35,7 @@
                     <img src="{{ $item['mediumImageUrls'] }}">
                 </td>
                 <td>
-                    <a href="{{ $item['itemUrl'] }}" class="text-white">{{ $item['itemName'] }}</a>
+                    <a href="{{ $item['itemUrl'] }}" class="text-dark">{{ $item['itemName'] }}</a>
                 </td>
                 <td>
                     &yen;{{ $item['itemPrice'] }}
