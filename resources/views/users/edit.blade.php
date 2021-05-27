@@ -13,7 +13,7 @@
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
                 
-                <p class="text-white ">プロフィール画像：</p>
+                <p class="text-dark">アイコン：</p>
                 <div class="form-group btn pb-4">
                     <div>
                         @if ($user->profile_image == null)
@@ -26,12 +26,10 @@
                 </div>
                 
                 <div class="form-group mb-5">
-                    {!! Form::submit('更新', ['class' => 'btn btn-secondary ']) !!}
+                    {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}
                 </div>
 
             {!! Form::close() !!}
-        </div>
-        <div class="col-sm-4 mb-5">
             {{-- アカウント削除ページへのリンク --}}
             {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                 {!! Form::submit('アカウントを削除', ['class' => 'btn btn-danger btn-sm']) !!}
