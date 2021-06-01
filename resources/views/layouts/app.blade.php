@@ -29,7 +29,8 @@
             @endif
             
             @yield('content')
-        </div>    
+        </div> 
+        
         <footer>
             <a href="https://jp.freepik.com/vectors/people">Stories - jp.freepik.com によって作成された people ベクトル</a>
         </footer>
