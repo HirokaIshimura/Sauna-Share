@@ -9,7 +9,6 @@
     <div class="row">
         <div class="col-md-6 offset-md-3 my-auto">
             {!! Form::open(['route' => 'signup.post']) !!}
-            
                 <div class="form-group py-4">
                     {!! Form::label('name', '名前') !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
@@ -22,14 +21,13 @@
                     {!! Form::label('password', 'パスワード') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
-                <div class="form-group pb-5">
+                <div class="form-group pb-4">
                     {!! Form::label('password_confirmation', 'パスワード（確認）') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
-                <div class="form-group pt-3 mb-5">
+                <div class="form-group py-3 mb-5">
                     {!! Form::submit('登録する', ['class' => 'btn btn-secondary btn-block']) !!}
                 </div>
-    
             {!! Form::close() !!}
         </div>
     </div>
