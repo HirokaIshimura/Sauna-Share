@@ -9,7 +9,7 @@
         </div>
     @else
         <div class="text-center m-auto top-page">
-            <h1 class="headcontent p-4 m-auto" style="font-size:6vw; font-weight:540;">Welcome to SaunaShare</h1>
+            <h1 class="headcontent p-4 m-auto" style="font-size:6vw; font-weight:540;">SaunaShare</h1>
             <p class="pt-4 px-4" style="line-height:4rem; font-size:2.5vh">
                 SaunaShareは無料で始められて、あなたが行ったサウナを写真と共にシェアできます。
                 このコミュニティを通して、新しいサウナ仲間ができるかもしれません。
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="pb-5">
-                <p style="font-size:20px;">＊採用担当者様はゲストログインへお進みください。
+                <p style="font-size:2.5vh;">＊採用担当者様はゲストログインへお進みください。
                 あらかじめセットされているログイン情報でログイン可能となっております。</p>
             </div>
         </div>
