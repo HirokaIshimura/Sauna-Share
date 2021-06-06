@@ -5,7 +5,18 @@
 
 レスポンシブ対応しているのでスマホからでも利用することができます。
 
-AWSを用いたインフラの構築や、開発環境にdockerとdocker-composeの導入、CircleCIを使ったCI/CDパイプラインGitHubでのissuesでのIssuesとPull requestを活用した擬似チーム開発など、本番を意識して取り組みました。
+開発の後半では、GitHubのIssuesとPull Requestを用いて、疑似チーム開発のようにバグの修正や機能追加を行いました。
+
+セキュリティ面では、パスワードのHASH化、常時SSL化、.envなどの秘匿情報をGitHubにアップしない、といったことも行っています。
+
+テストに関しては、独学で学んだ私が現状出来る範囲でのFeatureテストを記述しました。
+
+WEBサーバーには、Apacheよりも高速で且つ高負荷に耐えられるNginxを使用しました。
+
+これから自分のスキルアップのため、コメント機能や部分SPA化などの機能を追加していく予定です。
+
+
+AWSを用いたインフラの構築や、開発環境にdockerとdocker-composeを導入、CircleCIを使ったCI/CDパイプライン、GitHubのIssuesとPull requestを活用した擬似チーム開発など、本番を意識して取り組みました。
 
 
 アプリURL
