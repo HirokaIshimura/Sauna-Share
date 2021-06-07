@@ -12,17 +12,19 @@
                 {!! Form::text('title', null, ['class' => 'form-control']) !!}
             </div>
             
+            @if($post->picture_url != null)
             <div class="form-group mb-2">
                 <p>写真</p>
                 <img src ="https://myapp-images-bucket.s3-ap-northeast-1.amazonaws.com/{{ $post->picture_url }}">
             </div>
+            @endif
             
             <div class="form-group mb-4">
                 {!! Form::label('content', '詳細:') !!}
                 {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
             </div>
 
-            {!! Form::submit('更新する', ['class' => 'btn btn-primary mb-5']) !!}
+            {!! Form::submit('更新する', ['class' => 'btn btn-secondary mb-5']) !!}
         {!! Form::close() !!}
 
         {{-- 投稿削除ボタンのフォーム --}}
