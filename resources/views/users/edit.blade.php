@@ -30,7 +30,8 @@
                 </div>
 
             {!! Form::close() !!}
-            {{-- アカウント削除ページへのリンク --}}
+
+            <!--  アカウント削除ページへのリンク  -->
             {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                 {!! Form::submit('アカウントを削除', ['class' => 'btn btn-danger btn-sm']) !!}
             {!! Form::close() !!}
