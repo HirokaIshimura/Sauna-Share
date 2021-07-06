@@ -22,12 +22,12 @@
                 {!! Form::textarea('content', null, ['class' => 'form-control']) !!}
             </div>
 
-            {!! Form::submit('更新する', ['class' => 'btn btn-primary mb-5']) !!}
+            {!! Form::submit('更新する', ['class' => 'btn btn-primary mb-3']) !!}
         {!! Form::close() !!}
 
         {{-- 投稿削除ボタンのフォーム --}}
         {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'delete']) !!}
-            {!! Form::submit('このシェアを削除', ['class' => 'btn btn-danger btn-sm']) !!}
+            {!! Form::submit('このシェアを削除', ['class' => 'btn btn-danger btn-sm mb-5']) !!}
         {!! Form::close() !!}
     </div>
 </div>
