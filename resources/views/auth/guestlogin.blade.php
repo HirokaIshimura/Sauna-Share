@@ -28,7 +28,7 @@
                 {!! Form::password('password', ['class' => 'form-control']) !!}
             </div>
             
-            <div class="form-group pt-5 pb-3">
+            <div class="form-group py-3">
                 {!! Form::submit('ゲストログイン', ['class' => 'btn btn-secondary btn-block']) !!}
             </div>
             {!! Form::close() !!}

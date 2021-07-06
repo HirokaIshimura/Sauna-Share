@@ -6,7 +6,7 @@ body {
     background-attachment: fixed;
     background-color: rgba(255,255,255,0.3);
     background-blend-mode: lighten;
-    font-family: 'Times New Roman' ;
+    font-family: "メイリオ", "游ゴシック", sans-serif;
     color: black;
 }
 
@@ -14,7 +14,7 @@ body {
     position: fixed;
     z-index: 1000;
     bottom: 5%;
-    right: 5%;
+    right: 10%;
     width: 10%;
     text-decoration: none;
 }
@@ -53,6 +53,7 @@ h1 {
 }
 
 .user-list-card {
+    height: 90px;
     background-color:silver;
 }
 
@@ -86,7 +87,7 @@ h3 {
 }
 
 .post-card-head {
-    background-color: rgb(189, 222, 135);
+    background-color: silver;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -144,4 +145,8 @@ footer a{
     margin: 0 auto;
     color: white;
     display: block;
+}
+
+img i {
+    border: 1px black solid;
 }

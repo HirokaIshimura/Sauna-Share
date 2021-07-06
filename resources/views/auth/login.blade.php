@@ -8,7 +8,6 @@
 
     <div class="row my-auto">
         <div class="col-sm-6 offset-sm-3">
-
             {!! Form::open(['route' => 'login.post']) !!}
                 <div class="form-group pb-4">
                     {!! Form::label('email', 'メールアドレス') !!}
@@ -20,11 +19,10 @@
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
                 
-                <div class="form-group pt-5 pb-3">
+                <div class="form-group py-3">
                     {!! Form::submit('ログインする', ['class' => 'btn btn-secondary btn-block']) !!}
                 </div>
             {!! Form::close() !!}
-
             <!-- ユーザ登録ページへのリンク -->
             <p class="mb-4">ユーザー登録されていない方は {!! link_to_route('signup.get', 'こちら') !!}</p>
         </div>

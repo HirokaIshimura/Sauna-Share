@@ -42,8 +42,8 @@
                                 </div>
                                 @if (Auth::id() == $post->user_id)
                                 <div>
-                                    {{-- 投稿編集ページへのフォーム --}}
-                                    {!! link_to_route('posts.edit', '編集', ['post' => $post->id], ['class' => 'btn btn-secondary btn-sm']) !!}
+                                    <!-- 投稿編集ページへのフォーム -->
+                                    {!! link_to_route('posts.edit', '編集', ['post' => $post->id], ['class' => 'btn btn-light btn-sm border-dark']) !!}
                                 </div>
                                 @else
                                 <div>
